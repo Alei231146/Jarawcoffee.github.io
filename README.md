@@ -259,3 +259,5 @@
 
     <script>
         // Function to open video modal
+        function openVideo(videoURL) {
+            var modal = document.getElementById('
