@@ -109,6 +109,41 @@
             border-radius: 8px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
         }
+
+        /* Style for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow: auto;
+        }
+
+        .modal-content {
+            display: block;
+            margin: 15% auto;
+            width: 70%;
+            max-width: 800px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -154,7 +189,23 @@
             <img src="https://i.imgur.com/ohF33VB.jpeg" alt="Coffee Cup 2">
             <img src="https://i.imgur.com/BH0l38Q.jpeg" alt="Coffee Cup 3">
             <img src="https://i.imgur.com/BNvHlvY.jpeg" alt="Coffee Cup 4">
+            <img src="https://i.imgur.com/psGiYnA.jpeg" alt="Coffee Cup 5">
         </div>
+    </div>
+
+    <section id="video" class="container">
+        <h2>Watch Our Story</h2>
+        <p>Click the video icon below to watch our journey and commitment to great coffee.</p>
+        <i class="fas fa-video video-icon" onclick="openVideo('https://i.imgur.com/eWuRwvW.mp4')"></i>
+    </section>
+
+    <!-- Popup Video Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeVideo()">&times;</span>
+        <video class="modal-content" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
     </div>
 
     <footer>
@@ -162,5 +213,24 @@
             <p>&copy; 2024 JARAW Coffee Shop. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Function to open video modal
+        function openVideo(videoURL) {
+            var modal = document.getElementById('videoModal');
+            var video = document.getElementById('videoSource');
+            video.src = videoURL;
+            modal.style.display = 'block';
+        }
+
+        // Function to close video modal
+        function closeVideo() {
+            var modal = document.getElementById('videoModal');
+            var video = document.getElementById('videoSource');
+            video.pause();
+            video.currentTime = 0;
+            modal.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
