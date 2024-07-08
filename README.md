@@ -52,6 +52,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
             width: 100%;
             max-width: 800px;
+            position: relative; /* Ensure coffee icon positioning relative to section */
         }
 
         section h2 {
@@ -86,19 +87,34 @@
         /* Coffee icons styling */
         .coffee-icon {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            font-size: 50px;
             color: rgba(0, 0, 0, 0.1); /* Light coffee color for icons */
-            font-size: 80px;
             pointer-events: none;
+        }
+
+        .coffee-icon-top {
+            top: 10px;
+            left: 10px;
+        }
+
+        .coffee-icon-side {
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+
+        .coffee-icon-bottom {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* Responsive image styling */
         .coffee-images {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
             margin-top: 30px;
         }
 
@@ -156,34 +172,23 @@
     <section id="about" class="container">
         <h2>About Us</h2>
         <p>At JARAW Coffee Shop, we're passionate about serving you the finest coffee experience. From carefully selected beans to expertly brewed beverages, we ensure every cup is crafted with love and precision.</p>
-        <i class="fas fa-coffee coffee-icon"></i>
+        <i class="fas fa-coffee coffee-icon coffee-icon-top"></i>
     </section>
 
     <section id="menu" class="container">
         <h2>Our Menu</h2>
         <p>Explore our diverse menu featuring a range of specialty coffees, teas, and delicious pastries. Whether you prefer a rich espresso or a soothing herbal tea, we have something to satisfy every palate.</p>
-        <i class="fas fa-coffee coffee-icon"></i>
+        <i class="fas fa-coffee coffee-icon coffee-icon-side"></i>
     </section>
 
     <section id="commitment" class="container">
         <h2>Our Commitment</h2>
         <p>We are committed to quality, sustainability, and community. Our beans are sourced responsibly, and we strive to minimize our environmental footprint. Join us in supporting local initiatives and enjoying exceptional coffee.</p>
-        <i class="fas fa-coffee coffee-icon"></i>
+        <i class="fas fa-coffee coffee-icon coffee-icon-bottom"></i>
     </section>
 
-    <section id="visit" class="container">
-        <h2>Visit Us</h2>
-        <p>Come visit us at:<br>
-        <span class="contact-info">Address:</span> No.44/In front of CIty Park/YuZaNa/Myitkyina<br>
-        <span class="contact-info">Phone:</span> <a href="tel:+959700787822" class="contact-info">09700787822</a><br>
-        <span class="contact-info">Gmail:</span> <a href="mailto:jarawcoffee20@gmail.com" class="contact-info">jarawcoffee20@gmail.com</a><br>
-        <span class="contact-info">Telegram:</span> <a href="https://t.me/jarawcoffee20" class="contact-info">t.me/jarawcoffee20</a></p>
-        <i class="fas fa-coffee coffee-icon"></i>
-    </section>
-
-    <!-- Coffee cup images -->
     <div class="container">
-        <h2>Our Coffee</h2>
+        <h2>More Coffee Moments</h2>
         <div class="coffee-images">
             <img src="https://i.imgur.com/gtao7xy.jpeg" alt="Coffee Cup 1">
             <img src="https://i.imgur.com/ohF33VB.jpeg" alt="Coffee Cup 2">
