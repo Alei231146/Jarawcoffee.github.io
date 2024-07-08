@@ -1,3 +1,30 @@
+<section id="commitment" class="container">
+    <div class="video-container">
+        <video controls>
+            <source src="https://i.imgur.com/eWuRwvW.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h2>Our Commitment</h2>
+    <p>We are committed to quality, sustainability, and community. Our beans are sourced responsibly, and we strive to minimize our environmental footprint. Join us in supporting local initiatives and enjoying exceptional coffee.</p>
+    <i class="fas fa-coffee coffee-icon coffee-icon-bottom"></i>
+</section>
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height: width) */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +49,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh; /* Ensure page stretches to full viewport height */
         }
 
         .container {
@@ -80,14 +108,21 @@
             text-align: center;
             padding: 10px 0;
             width: 100%;
-            position: fixed;
-            bottom: 0;
+            position: relative; /* Adjust position for copyright */
+            margin-top: auto; /* Push footer to bottom of viewport */
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            color: #fff; /* White text color */
         }
 
         /* Coffee icons styling */
         .coffee-icon {
             position: absolute;
-            font-size: 50px;
+            font-size: 40px;
             color: rgba(0, 0, 0, 0.1); /* Light coffee color for icons */
             pointer-events: none;
         }
@@ -111,16 +146,14 @@
 
         /* Responsive image styling */
         .coffee-images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
 
         .coffee-images img {
             width: 100%;
-            max-width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
@@ -160,6 +193,41 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        /* Video icon styling */
+        .video-icon {
+            font-size: 50px;
+            color: #8d6e63; /* Coffee color */
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-icon:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive video styling */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (height: width) */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -178,64 +246,4 @@
     <section id="menu" class="container">
         <h2>Our Menu</h2>
         <p>Explore our diverse menu featuring a range of specialty coffees, teas, and delicious pastries. Whether you prefer a rich espresso or a soothing herbal tea, we have something to satisfy every palate.</p>
-        <i class="fas fa-coffee coffee-icon coffee-icon-side"></i>
-    </section>
-
-    <section id="commitment" class="container">
-        <h2>Our Commitment</h2>
-        <p>We are committed to quality, sustainability, and community. Our beans are sourced responsibly, and we strive to minimize our environmental footprint. Join us in supporting local initiatives and enjoying exceptional coffee.</p>
-        <i class="fas fa-coffee coffee-icon coffee-icon-bottom"></i>
-    </section>
-
-    <div class="container">
-        <h2>More Coffee Moments</h2>
-        <div class="coffee-images">
-            <img src="https://i.imgur.com/gtao7xy.jpeg" alt="Coffee Cup 1">
-            <img src="https://i.imgur.com/ohF33VB.jpeg" alt="Coffee Cup 2">
-            <img src="https://i.imgur.com/BH0l38Q.jpeg" alt="Coffee Cup 3">
-            <img src="https://i.imgur.com/BNvHlvY.jpeg" alt="Coffee Cup 4">
-            <img src="https://i.imgur.com/psGiYnA.jpeg" alt="Coffee Cup 5">
-        </div>
-    </div>
-
-    <section id="video" class="container">
-        <h2>Watch Our Story</h2>
-        <p>Click the video icon below to watch our journey and commitment to great coffee.</p>
-        <i class="fas fa-video video-icon" onclick="openVideo('https://i.imgur.com/eWuRwvW.mp4')"></i>
-    </section>
-
-    <!-- Popup Video Modal -->
-    <div id="videoModal" class="modal">
-        <span class="close" onclick="closeVideo()">&times;</span>
-        <video class="modal-content" controls>
-            <source id="videoSource" src="" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 JARAW Coffee Shop. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Function to open video modal
-        function openVideo(videoURL) {
-            var modal = document.getElementById('videoModal');
-            var video = document.getElementById('videoSource');
-            video.src = videoURL;
-            modal.style.display = 'block';
-        }
-
-        // Function to close video modal
-        function closeVideo() {
-            var modal = document.getElementById('videoModal');
-            var video = document.getElementById('videoSource');
-            video.pause();
-            video.currentTime = 0;
-            modal.style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+       
