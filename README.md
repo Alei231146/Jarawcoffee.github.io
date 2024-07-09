@@ -224,7 +224,7 @@
 
     <section id="video" class="container">
         <div class="video-container">
-            <iframe src="https://i.imgur.com/eWuRwvW.mp4" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Atr97iC4HFc" frameborder="0" allowfullscreen></iframe>
         </div>
         <h2>Our Commitment</h2>
         <p>We are committed to quality, sustainability, and community. Our beans are sourced responsibly, and we strive to minimize our environmental footprint. Join us in supporting local initiatives and enjoying exceptional coffee.</p>
@@ -260,4 +260,5 @@
     <script>
         // Function to open video modal
         function openVideo(videoURL) {
-            var modal = document.getElementById('
+            var modal = document.getElementById('videoModal');
+            var videoSource = document.getElementById
